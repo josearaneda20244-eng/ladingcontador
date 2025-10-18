@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     role: 'Socia directora',
     rating: 5,
     comment:
-      'Leonardo Oliva reorganizó nuestros libros y creó un control de honorarios transparente por socio. Hoy proyectamos utilidades y provisiones con dos meses de anticipación. La última fiscalización del SII cerró sin observaciones.',
+      'Leonardo Oliva reorganizó nuestros libros e instaló un control de honorarios por socia. Hoy anticipamos utilidades y provisiones con dos meses de ventaja y la última fiscalización del SII cerró sin reparos.',
     avatar: 'MC',
     category: 'boutique',
     featured: true,
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     role: 'Socio litigante',
     rating: 5,
     comment:
-      'El equipo de Leonardo preparó informes periciales impecables y nos acompañó en cada audiencia. El soporte presencial permitió responder las preguntas del árbitro con total confianza.',
+      'Sus peritajes contables y acompañamiento en audiencias arbitrales nos permitieron defender el 95% de los montos reclamados. Llegó con respuestas preparadas para cada pregunta del árbitro.',
     avatar: 'RP',
     category: 'abogados',
   },
@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
     role: 'Notaria y conservadora',
     rating: 5,
     comment:
-      'Implementamos protocolos UAF, matrices de riesgo y reportes mensuales automatizados. La auditoría anual dejó de ser una contingencia porque tenemos cierres y respaldos centralizados.',
+      'Implementamos protocolos UAF, matrices de riesgo y reportería mensual automatizada. Pasamos la auditoría anual sin observaciones y tenemos todos los fondos de terceros controlados.',
     avatar: 'CL',
     category: 'notaria',
     featured: true,
@@ -60,7 +60,7 @@ const testimonials: Testimonial[] = [
     role: 'Gerente administrativo',
     rating: 5,
     comment:
-      'Pasamos de una contabilidad tradicional a un modelo legal-first con KPIs por área, tiempos de cobro y escenarios de distribución a socios. Las reuniones de directorio ahora se basan en datos reales.',
+      'Migramos de una contabilidad tradicional a un modelo legal-first con KPIs por área, tiempos de cobro y escenarios de distribución a socios. Ahora los directorios se toman con datos en tiempo real.',
     avatar: 'FO',
     category: 'fullservice',
   },
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     role: 'Socia fundadora',
     rating: 5,
     comment:
-      'La transformación digital de nuestra contabilidad nos permitió escalar de 3 a 12 abogados sin perder control financiero. Los dashboards en tiempo real son fundamentales para nuestras decisiones estratégicas.',
+      'Digitalizamos la contabilidad completa al escalar de 3 a 12 abogadas. Los dashboards y alertas de liquidez nos dieron tranquilidad para abrir dos sedes nuevas.',
     avatar: 'AM',
     category: 'abogados',
     featured: true,
@@ -83,7 +83,7 @@ const testimonials: Testimonial[] = [
     role: 'Notario público',
     rating: 5,
     comment:
-      'El sistema de alertas tempranas nos ha evitado múltiples contingencias. Ahora detectamos irregularidades antes de que se conviertan en problemas con la UAF o el SII.',
+      'El sistema de alertas tempranas de Leonardo nos permitió anticipar reparos SII y reportar UAF sin atrasos. Hoy gestionamos la notaría con indicadores diarios.',
     avatar: 'CM',
     category: 'notaria',
   },
@@ -91,9 +91,9 @@ const testimonials: Testimonial[] = [
 
 const categoryLabels = {
   notaria: 'Notarías',
-  abogados: 'Estudios de Abogados',
-  boutique: 'Boutiques Legales',
-  fullservice: 'Full Service',
+  abogados: 'Estudios de abogados',
+  boutique: 'Boutiques legales',
+  fullservice: 'Firmas full service',
 };
 
 export default function Testimonials() {
@@ -209,7 +209,7 @@ export default function Testimonials() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 min-h-[44px] ${
                 selectedCategory === 'all'
                   ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -221,7 +221,7 @@ export default function Testimonials() {
               <button
                 key={key}
                 onClick={() => setSelectedCategory(key)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 min-h-[44px] ${
                   selectedCategory === key
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
                     : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -262,7 +262,7 @@ export default function Testimonials() {
             {viewMode === 'carousel' && (
               <button
                 onClick={toggleAutoPlay}
-                className="flex items-center gap-2 rounded-lg bg-white border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-slate-50"
+                className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-slate-50 min-h-[44px]"
               >
                 {isAutoPlaying ? (
                   <>
@@ -355,7 +355,7 @@ export default function Testimonials() {
               <div className="mt-8 flex items-center justify-between">
                 <button
                   onClick={prevTestimonial}
-                  className="group flex h-14 w-14 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 backdrop-blur-sm text-slate-600 shadow-lg transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-0.5"
+                  className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 text-slate-600 shadow-lg transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-0.5 sm:h-14 sm:w-14 min-h-[48px]"
                   aria-label="Testimonio anterior"
                 >
                   <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-0.5" />
@@ -378,7 +378,7 @@ export default function Testimonials() {
 
                 <button
                   onClick={nextTestimonial}
-                  className="group flex h-14 w-14 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 backdrop-blur-sm text-slate-600 shadow-lg transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-0.5"
+                  className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 text-slate-600 shadow-lg transition-all duration-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-0.5 sm:h-14 sm:w-14 min-h-[48px]"
                   aria-label="Siguiente testimonio"
                 >
                   <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5" />
@@ -451,13 +451,13 @@ export default function Testimonials() {
           className="mt-16 text-center"
         >
           <p className="text-lg text-slate-600">
-            ¿Quieres que evaluemos la contabilidad y el blindaje fiscal de tu estudio?
+            ¿Quieres que evaluemos la contabilidad jurídica y el blindaje fiscal de tu estudio?
           </p>
           <button
             onClick={() =>
               document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 to-blue-900 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+            className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 to-blue-900 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl sm:w-auto sm:text-lg"
           >
             Agendar diagnóstico contable
           </button>

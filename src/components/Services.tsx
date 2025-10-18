@@ -16,26 +16,26 @@ import Link from 'next/link';
 const services = [
   {
     icon: Calculator,
-    title: 'Contabilidad operativa legal-first',
+    title: 'Contabilidad legal-first y control de honorarios',
     description:
-      'Registro, conciliación y seguimiento de honorarios, desembolsos y fondos de clientes bajo normas de estudios jurídicos.',
+      'Implementamos contabilidad para estudios jurídicos con seguimiento de honorarios, fondos de clientes y costos litigiosos.',
     features: [
-      'Plan de cuentas diseñado para litigios civiles, arbitrajes y notarías.',
-      'Conciliaciones automáticas, reportería mensual y dashboard por práctica.',
-      'Panel financiero compartido con socios administradores y gerencias.',
+      'Plan de cuentas diseñado para litigios civiles, arbitrajes y notarías con trazabilidad total.',
+      'Conciliaciones automáticas, reportería mensual y dashboards por área de práctica.',
+      'Accesos seguros para socios administradores y gerencias financieras.',
     ],
     gradient: 'from-blue-500 via-blue-600 to-indigo-600',
-    badge: 'Servicio base',
+    badge: 'Base operativa',
   },
   {
     icon: ShieldCheck,
-    title: 'Auditoría tributaria y defensas SII',
+    title: 'Auditoría fiscal Chile y defensas SII',
     description:
-      'Prevención de reparos, regularización de impuestos y acompañamiento presencial en fiscalizaciones y citaciones.',
+      'Prevengo reparos, regularizo impuestos y represento a tu firma en fiscalizaciones SII o UAF con presencia en terreno.',
     features: [
-      'Revisión de respaldos, honorarios y trazabilidad de anticipos.',
-      'Planes correctivos y cumplimiento normativo SII y UAF.',
-      'Representación técnica ante fiscalizadores y mesas de trabajo.',
+      'Revisión de respaldos, boletas de honorarios y anticipos distribuibles.',
+      'Planes correctivos y cumplimiento integral SII + UAF.',
+      'Representación técnica en citaciones, fiscalizaciones y mesas de trabajo.',
     ],
     gradient: 'from-emerald-500 via-teal-500 to-emerald-600',
     badge: 'Blindaje fiscal',
@@ -44,24 +44,24 @@ const services = [
     icon: FileText,
     title: 'Peritajes contables y soporte probatorio',
     description:
-      'Informes periciales, cuantificación de daños y asesoría en juicios civiles, laborales y comerciales.',
+      'Elaboro informes periciales, cuantificación de daños y acompañamiento experto en juicios civiles, laborales y comerciales.',
     features: [
-      'Elaboración de informes con estándar judicial y cadena de custodia.',
-      'Valoración de perjuicios, flujos y cálculos de interés moratorio.',
-      'Asistencia en audiencias y preparación de contraperitajes.',
+      'Informes con estándar judicial, cadena de custodia y anexos auditables.',
+      'Valoración de perjuicios, flujos descontados e intereses moratorios.',
+      'Apoyo en audiencias, contraperitajes y respuestas a oficios.',
     ],
     gradient: 'from-purple-500 via-violet-500 to-fuchsia-500',
     badge: 'Litigios',
   },
   {
     icon: Users,
-    title: 'Gobernanza para socios y compliance financiero',
+    title: 'Gobernanza societaria y compliance financiero',
     description:
-      'Diseñamos políticas de distribución, matrices de aprobación y protocolos UAF para firmas en crecimiento.',
+      'Diseñamos políticas de distribución, matrices de aprobación y controles UAF para firmas en crecimiento.',
     features: [
-      'Modelos de distribución y retenciones estratégicas.',
+      'Modelos de distribución y retenciones estratégicas para socios.',
       'Matrices de poderes, firmas electrónicas y protocolos internos.',
-      'Capacitación continua sobre cumplimiento financiero.',
+      'Capacitación continua en compliance financiero y prevención de lavado.',
     ],
     gradient: 'from-cyan-500 via-sky-500 to-blue-500',
     badge: 'Escalamiento',
@@ -70,22 +70,22 @@ const services = [
     icon: Briefcase,
     title: 'Onboarding legal para estudios emergentes',
     description:
-      'Formalización, elección de régimen tributario y digitalización completa para firmas que inician operaciones.',
+      'Formalizo tu firma, defino régimen tributario y digitalizo procesos contables desde el primer día.',
     features: [
-      'Constitución express y tramitación ante el SII.',
-      'Implementación de software contable y CRM legal.',
-      'Mentoría al socio administrador durante los primeros meses.',
+      'Constitución express y tramitación ante el SII y municipal.',
+      'Implementación de software contable integrado con CRM legal.',
+      'Mentoría al socio administrador durante los primeros 90 días.',
     ],
     gradient: 'from-amber-500 via-orange-500 to-rose-500',
     badge: 'Estudios nuevos',
   },
   {
     icon: CheckCircle2,
-    title: 'Compliance financiero y UAF',
+    title: 'Compliance financiero y reportería UAF',
     description:
-      'Diseño e implementación de matrices de riesgo, manuales de prevención y reportería UAF para notarías y firmas de abogados.',
+      'Diseño e implemento matrices de riesgo, manuales y reportes UAF para notarías y firmas de abogados.',
     features: [
-      'Diagnóstico de riesgos por cartera y actividades.',
+      'Diagnóstico de riesgos por cartera y actividades reguladas.',
       'Protocolos de monitoreo y reporte de operaciones sospechosas.',
       'Capacitación anual y actualización normativa permanente.',
     ],
@@ -106,31 +106,32 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-12 text-center lg:mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-blue-700 rounded-full px-6 py-3 mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-blue-700"
           >
-            <Sparkles className="w-5 h-5" />
-            <span className="font-semibold uppercase tracking-wide text-sm">
-              Especialista en firmas legales
+            <Sparkles className="h-5 w-5" />
+            <span className="text-sm font-semibold uppercase tracking-wide">
+              Especialista en firmas jurídicas de Chile
             </span>
           </motion.div>
 
-          <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Servicios contables que protegen tu reputación profesional
+          <h2 className="mb-6 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Servicios contables y tributarios que blindan tu reputación legal
           </h2>
-          <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            Integramos contabilidad, defensa tributaria y compliance para que socios y directores
-            tomen decisiones con datos certeros y respaldo documental impecable.
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg lg:text-xl">
+            Implemento contabilidad para estudios jurídicos, notarías y arbitrajes con foco en cumplimiento,
+            rentabilidad y defensa tributaria. Cada servicio se integra a tus procesos para reducir contingencias
+            y acelerar decisiones.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -138,42 +139,41 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group relative"
             >
               {service.badge && (
-                <div className={`absolute -top-4 left-6 z-20 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r ${service.gradient} shadow-lg uppercase tracking-wide`}>
+                <div className="mb-4 inline-flex rounded-full border border-slate-200/80 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
                   {service.badge}
                 </div>
               )}
 
-              <div className="card card-hover bg-white border border-slate-100 rounded-3xl p-8 h-full relative overflow-hidden">
+              <div className="card card-hover relative h-full overflow-hidden rounded-3xl border border-slate-100 bg-white p-6 sm:p-8">
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 transition-all duration-500 group-hover:opacity-10`}
                 />
 
                 <div className="relative z-10 mb-6">
                   <div
-                    className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-2 transition-all duration-300`}
+                    className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${service.gradient} text-white shadow-lg transition-all duration-300 group-hover:rotate-2 group-hover:scale-110`}
                   >
-                    <service.icon className="w-10 h-10 text-white" />
+                    <service.icon className="h-10 w-10" />
                   </div>
                 </div>
 
                 <div className="relative z-10 space-y-6">
                   <div>
-                    <h3 className="text-2xl font-semibold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors">
+                    <h3 className="mb-3 text-2xl font-semibold text-slate-900 transition-colors group-hover:text-slate-800">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                    <p className="text-base leading-relaxed text-slate-600 sm:text-lg">{service.description}</p>
                   </div>
 
                   <div className="space-y-3">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-3">
-                        <div className="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                        <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100">
+                          <CheckCircle2 className="h-3 w-3 text-emerald-600" />
                         </div>
-                        <span className="text-slate-700 text-sm leading-relaxed">{feature}</span>
+                        <span className="text-base leading-relaxed text-slate-700">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -181,10 +181,10 @@ export default function Services() {
                   <div className="pt-4">
                     <Link
                       href="#contacto"
-                      className="group/btn inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-all duration-300"
+                      className="group/btn inline-flex min-h-[44px] items-center gap-2 font-semibold text-slate-600 transition-all duration-300 hover:text-slate-900"
                     >
                       <span>Solicitar detalle</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Link>
                   </div>
                 </div>
@@ -200,49 +200,47 @@ export default function Services() {
           viewport={{ once: true }}
           className="relative mt-20"
         >
-          <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 rounded-3xl p-12 lg:p-16 text-white relative overflow-hidden">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-10 text-white sm:p-12 lg:p-16">
             <div className="absolute inset-0 opacity-50">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:60px_60px]" />
+              <div className="absolute top-0 left-0 h-full w-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:60px_60px]" />
             </div>
 
-            <div className="relative z-10 text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-6 py-3 mb-6">
-                <Calculator className="w-5 h-5 text-blue-300" />
-                <span className="font-semibold tracking-wide">
-                  Diagnóstico gratuito para tu firma
-                </span>
+            <div className="relative z-10 mx-auto max-w-4xl text-center">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-3 backdrop-blur-sm">
+                <Calculator className="h-5 w-5 text-blue-300" />
+                <span className="font-semibold tracking-wide">Diagnóstico contable gratuito</span>
               </div>
 
-              <h3 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                ¿Listo para blindar la contabilidad de tu estudio?
+              <h3 className="mb-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                ¿Listo para blindar la contabilidad jurídica de tu estudio?
               </h3>
 
-              <p className="text-xl text-slate-200 mb-10 leading-relaxed max-w-2xl mx-auto">
-                Revisaremos tu situación tributaria, los flujos de honorarios y los riesgos de
-                fiscalización. Recibirás un plan accionable con prioridades y estimación de ahorros.
+              <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-xl">
+                Revisaremos tu contabilidad, flujos de honorarios, cumplimiento SII/UAF y riesgos de fiscalización.
+                Recibirás un plan accionable con prioridades, plazos y estimación de ahorros.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   href="#contacto"
-                  className="btn btn-primary bg-white text-slate-900 hover:bg-slate-100"
+                  className="btn btn-primary min-h-[52px] w-full bg-white text-slate-900 hover:bg-slate-100 sm:w-auto"
                 >
-                  Agendar evaluación
-                  <ArrowRight className="w-5 h-5" />
+                  Agendar diagnóstico 24h
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
 
                 <Link
                   href="#contacto"
-                  className="btn btn-secondary bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                  className="btn btn-secondary min-h-[52px] w-full border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 sm:w-auto"
                 >
-                  Solicitar propuesta
+                  Solicitar propuesta formal
                 </Link>
               </div>
             </div>
 
-            <div className="absolute top-10 right-10 w-40 h-40 bg-blue-500/25 rounded-full blur-3xl" />
-            <div className="absolute bottom-8 left-8 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl" />
+            <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-blue-500/25 blur-3xl" />
+            <div className="absolute bottom-8 left-8 h-48 w-48 rounded-full bg-purple-500/20 blur-3xl" />
           </div>
         </motion.div>
       </div>

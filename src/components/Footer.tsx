@@ -41,7 +41,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/56912345678',
+    href: 'https://wa.me/56912345678?text=Hola%20quiero%20agendar%20un%20diagn%C3%B3stico%20contable.',
     icon: MessageCircle,
   },
 ];
@@ -64,7 +64,6 @@ export default function Footer() {
         <div className="absolute inset-0 bg-grid-soft opacity-10" />
       </div>
 
-      {/* Botón de scroll to top mejorado */}
       <motion.button
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -72,20 +71,19 @@ export default function Footer() {
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => scrollToElement('hero')}
-        className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl transition-all duration-300 hover:shadow-2xl hover:from-blue-500 hover:to-purple-500 backdrop-blur-sm border border-white/10"
+        className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl transition-all duration-300 hover:from-blue-500 hover:to-purple-500 hover:shadow-2xl"
         aria-label="Volver al inicio"
       >
         <ArrowUp className="h-6 w-6 text-white" />
       </motion.button>
 
       <div className="container relative">
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-20 sm:py-24"
+          className="py-16 sm:py-24"
         >
           <div className="grid gap-12 lg:grid-cols-4 lg:gap-16">
             <div className="lg:col-span-2">
@@ -101,14 +99,15 @@ export default function Footer() {
                     <Sparkles className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Leonardo Oliva Martinez</h3>
-                    <p className="text-sm text-blue-300">Contador Jurídico</p>
+                    <h3 className="text-xl font-bold text-white">Leonardo Oliva Martínez</h3>
+                    <p className="text-sm text-blue-300">Contador Auditor Jurídico</p>
                   </div>
                 </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Asesoría contable y tributaria especializada para estudios jurídicos, notarías y centros de arbitraje. Confidencialidad, estrategia y cumplimiento en cada informe.
+                <p className="text-base leading-relaxed text-slate-300">
+                  Asesoría contable y tributaria especializada para estudios jurídicos, notarías y
+                  centros de arbitraje. Confidencialidad, estrategia y cumplimiento en cada informe.
                 </p>
-                <div className="flex gap-4">
+                <div className="mt-6 flex gap-4">
                   {socialLinks.map((social) => (
                     <motion.a
                       key={social.name}
@@ -118,6 +117,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 transition-colors duration-300 hover:bg-white/20"
+                      aria-label={social.name}
                     >
                       <social.icon className="h-6 w-6 text-white" />
                     </motion.a>
@@ -209,7 +209,7 @@ export default function Footer() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-sm text-slate-400"
             >
-              © {currentYear} Contador Jurídico. Todos los derechos reservados.
+              © {currentYear} Contador Auditor Jurídico. Todos los derechos reservados.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -219,10 +219,10 @@ export default function Footer() {
               className="flex gap-6 text-sm"
             >
               <a href="#" className="text-slate-400 transition-colors duration-200 hover:text-white">
-                Política de Privacidad
+                Política de privacidad
               </a>
               <a href="#" className="text-slate-400 transition-colors duration-200 hover:text-white">
-                Términos de Servicio
+                Términos de servicio
               </a>
             </motion.div>
           </div>
