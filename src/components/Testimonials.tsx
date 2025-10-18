@@ -103,8 +103,8 @@ export default function Testimonials() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [isPaused, setIsPaused] = useState(false);
 
-  const filteredTestimonials = selectedCategory === 'all' 
-    ? testimonials 
+  const filteredTestimonials = selectedCategory === 'all'
+    ? testimonials
     : testimonials.filter(t => t.category === selectedCategory);
 
   const nextTestimonial = useCallback(() => {
@@ -119,9 +119,10 @@ export default function Testimonials() {
     setCurrentIndex(index);
   }, []);
 
-  const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
-  };
+  // ✅ Memorizar y usar actualización funcional para no depender de isAutoPlaying
+  const toggleAutoPlay = useCallback(() => {
+    setIsAutoPlaying(prev => !prev);
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -144,7 +145,7 @@ export default function Testimonials() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextTestimonial, prevTestimonial, viewMode]);
+  }, [nextTestimonial, prevTestimonial, viewMode, toggleAutoPlay]); // ✅ incluir toggleAutoPlay
 
   // Auto-play functionality
   useEffect(() => {
@@ -172,7 +173,7 @@ export default function Testimonials() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-purple-50/20"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       </div>
-      
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           {...staggerContainer}
@@ -331,8 +332,9 @@ export default function Testimonials() {
                           </div>
                         </div>
 
+                        {/* ✅ Comillas tipográficas para evitar react/no-unescaped-entities */}
                         <blockquote className="text-xl italic leading-relaxed text-slate-700 sm:text-2xl lg:text-xl">
-                          "{filteredTestimonials[currentIndex]?.comment}"
+                          {`“${filteredTestimonials[currentIndex]?.comment}”`}
                         </blockquote>
 
                         <div className="pt-4 border-t border-slate-100">
@@ -399,7 +401,7 @@ export default function Testimonials() {
               {...staggerContainer}
               className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {filteredTestimonials.map((testimonial, index) => (
+              {filteredTestimonials.map((testimonial) => ( // ✅ eliminar index no usado
                 <motion.div
                   key={testimonial.id}
                   {...fadeInUp}
@@ -410,7 +412,7 @@ export default function Testimonials() {
                       ★
                     </div>
                   )}
-                  
+
                   <div className="mb-4 flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-purple-700 text-sm font-bold text-white">
                       {testimonial.avatar}
@@ -429,8 +431,9 @@ export default function Testimonials() {
                     ))}
                   </div>
 
+                  {/* ✅ Comillas tipográficas */}
                   <blockquote className="mb-4 text-sm italic leading-relaxed text-slate-700">
-                    "{testimonial.comment}"
+                    {`“${testimonial.comment}”`}
                   </blockquote>
 
                   <div className="border-t border-slate-100 pt-4">
