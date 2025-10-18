@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  const whatsappUrl = 'https://wa.me/56912345678';
+  const whatsappUrl = 'https://wa.me/56939067010';
   const message = encodeURIComponent(
     'Hola Leonardo Oliva, quiero agendar un diagnóstico contable para mi estudio jurídico esta semana.'
   );
